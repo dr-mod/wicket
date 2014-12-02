@@ -33,20 +33,21 @@
       <version>1.5.6</version>
     </dependency>
 
+
   </dependencies>
 
   <build>
     <finalName>WicketExamples</finalName>
 
     <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
+      <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+      <!--</resource>-->
       <resource>
         <filtering>false</filtering>
         <directory>src/main/java</directory>
         <includes>
-          <include>*</include>
+          <include>**</include>
         </includes>
         <excludes>
           <exclude>**/*.java</exclude>
@@ -54,6 +55,24 @@
       </resource>
     </resources>
 
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.2.2.v20140723</version>
+      </plugin>
+      <plugin>
+        <inherited>true</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <optimise>true</optimise>
+          <debug>true</debug>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
 </project>
