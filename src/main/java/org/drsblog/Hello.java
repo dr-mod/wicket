@@ -4,7 +4,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
 /**
- * Created by d.panin on 12/2/2014.
+ * Created by d.panin on 12/2/2014
  */
 public class Hello extends WebPage {
 
