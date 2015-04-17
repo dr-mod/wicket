@@ -12,12 +12,12 @@ public class MyApplication extends WebApplication {
     @Override
     protected void init() {
         super.init();
-        mount(new QueryStringUrlCodingStrategy("result", Hello.class));
+        mount(new QueryStringUrlCodingStrategy("home", Hello.class));
     }
 
     @Override
     public Class<? extends Page> getHomePage() {
-        return Hello.class; //return default page
+        return Hello.class;
     }
 
 }
