@@ -40,9 +40,6 @@
     <finalName>WicketExamples</finalName>
 
     <resources>
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-      <!--</resource>-->
       <resource>
         <filtering>false</filtering>
         <directory>src/main/java</directory>
@@ -52,6 +49,14 @@
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
+      </resource>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.html</include>
+          <include>**/*.properties</include>
+        </includes>
       </resource>
     </resources>
 

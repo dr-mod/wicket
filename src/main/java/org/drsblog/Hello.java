@@ -2,6 +2,7 @@ package org.drsblog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
@@ -23,7 +24,18 @@ public class Hello extends WebPage {
 
     public Hello() {
 
-        firstDropDownField = new DropDownChoice<String>("firstDropDownField", new PropertyModel<String>(this, "firstFieldData"), new ArrayList<String>());
+        firstDropDownField = new DropDownChoice<String>("firstDropDownField", new PropertyModel<String>(this, "firstFieldData"), new ArrayList<String>()){
+            @Override
+            protected boolean localizeDisplayValues() {
+                return true;
+            }
+
+            @Override
+            public Locale getLocale() {
+                return new Locale("en");
+            }
+        };
+
         firstDropDownField.setChoices(Arrays.asList("one", "two", "three"));
 
         final Model<String> messageModel = Model.of("Hello World, Wicket");
